@@ -14,9 +14,13 @@
     }
   },
   "minimum-stability": "dev",
+   "repositories": [{
+        "type": "vcs",
+        "url": "https://github.com/acsantanamx/web3.php"
+    }],
   "require": {
     "php": ">=7.1",
-    "sc0vu/web3.php": "0.1.4",
+    "iexbase/web3.php": "master",
     "web3p/ethereum-util": "0.1.2",
     "kornrunner/ethereum-offline-raw-tx": "0.2.4"
   }
