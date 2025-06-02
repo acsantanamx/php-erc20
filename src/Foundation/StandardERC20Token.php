@@ -228,7 +228,7 @@ abstract class StandardERC20Token extends ERC20
                          ->gasPrice()
         ;
 
-        $modified = floatval(Number::fromWei($gasPrice, 'gwei')) + $this->gasPriceModifier;
+        $modified = strval(floatval(Number::fromWei($gasPrice, 'gwei')) + $this->gasPriceModifier);
         return Number::toWei($modified, 'gwei')
                      ->toString()
             ;
