@@ -22,6 +22,6 @@
     "php": ">=7.1",
     "iexbase/web3.php": "master",
     "web3p/ethereum-util": "0.1.2",
-    "kornrunner/ethereum-offline-raw-tx": "0.2.4"
+    "kornrunner/ethereum-offline-raw-tx": "0.8.0"
   }
 }
