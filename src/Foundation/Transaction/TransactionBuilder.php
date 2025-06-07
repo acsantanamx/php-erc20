@@ -25,21 +25,18 @@ class TransactionBuilder
     private $eth = null;
 
 
-    public function setEth(Eth $eth)
-    {
+    public function setEth(Eth $eth) {
         $this->eth = $eth;
         return $this;
     }
 
 
-    public function nonce(string $nonce)
-    {
+    public function nonce(string $nonce) {
         $this->nonce = $nonce;
         return $this;
     }
 
-    public function to(string $to)
-    {
+    public function to(string $to) {
         $this->to = $to;
         return $this;
     }
@@ -49,32 +46,27 @@ class TransactionBuilder
         return $this;
     }
 
-    public function amount(string $amount)
-    {
+    public function amount(string $amount) {
         $this->amount = $amount;
         return $this;
     }
 
-    public function gasPrice(string $gasPrice)
-    {
+    public function gasPrice(string $gasPrice) {
         $this->gasPrice = $gasPrice;
         return $this;
     }
 
-    public function gasLimit(string $gasLimit)
-    {
+    public function gasLimit(string $gasLimit) {
         $this->gasLimit = $gasLimit;
         return $this;
     }
 
-    public function data(string $data)
-    {
+    public function data(string $data) {
         $this->data = $data;
         return $this;
     }
 
-    public function build()
-    {
+    public function build() {
         return new Transaction(new BaseTransaction($this->nonce, $this->gasPrice, $this->gasLimit, $this->to, $this->amount, $this->data), $this->eth, $this->chainId);
     }
 }
