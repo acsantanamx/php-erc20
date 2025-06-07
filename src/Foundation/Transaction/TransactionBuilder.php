@@ -44,7 +44,7 @@ class TransactionBuilder
         return $this;
     }
 
-    public function chainId(string $chainId) {
+    public function chainId(int $chainId) {
         $this->chainId = $chainId;
         return $this;
     }
@@ -75,6 +75,6 @@ class TransactionBuilder
 
     public function build()
     {
-        return new Transaction(new BaseTransaction($this->nonce, $this->gasPrice, $this->gasLimit, $this->to, $this->amount, $this->data), $this->eth);
+        return new Transaction(new BaseTransaction($this->nonce, $this->gasPrice, $this->gasLimit, $this->to, $this->amount, $this->data), $this->eth, $this->chainId);
     }
 }
