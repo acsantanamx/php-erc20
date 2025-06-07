@@ -12,8 +12,7 @@ namespace Lessmore92\Ethereum\Foundation\Transaction;
 use kornrunner\Ethereum\Transaction as BaseTransaction;
 use Lessmore92\Ethereum\Foundation\Eth;
 
-class Transaction
-{
+class Transaction {
     private $transaction;
     private $eth;
     private $chainId = 0;
