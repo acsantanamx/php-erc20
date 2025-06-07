@@ -15,6 +15,7 @@ use Lessmore92\Ethereum\Utils\Number;
 
 abstract class StandardERC20Token extends ERC20
 {
+    protected $chainId = 0;
     protected $contractAddress;
     protected $decimals;
     protected $gasLimits = [
@@ -84,6 +85,7 @@ abstract class StandardERC20Token extends ERC20
         return (new TransactionBuilder())
             ->setEth($this->getEth())
             ->to($this->contractAddress)
+            ->chainId($this->chainId)
             ->nonce($nonce)
             ->gasPrice($gasPrice)
             ->gasLimit($gasLimit)
@@ -120,6 +122,7 @@ abstract class StandardERC20Token extends ERC20
         return (new TransactionBuilder())
             ->setEth($this->getEth())
             ->to($this->contractAddress)
+            ->chainId($this->chainId)
             ->nonce($nonce)
             ->gasPrice($gasPrice)
             ->gasLimit($gasLimit)
@@ -167,6 +170,7 @@ abstract class StandardERC20Token extends ERC20
         return (new TransactionBuilder())
             ->setEth($this->getEth())
             ->to($this->contractAddress)
+            ->chainId($this->chainId)
             ->nonce($nonce)
             ->gasPrice($gasPrice)
             ->gasLimit($gasLimit)
