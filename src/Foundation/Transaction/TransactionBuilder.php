@@ -75,6 +75,6 @@ class TransactionBuilder
 
     public function build()
     {
-        return new Transaction(new BaseTransaction($this->nonce, $this->gasPrice, $this->gasLimit, $this->to, $this->chainId, $this->amount, $this->data), $this->eth);
+        return new Transaction(new BaseTransaction($this->nonce, $this->gasPrice, $this->gasLimit, $this->to, $this->amount, $this->data), $this->eth);
     }
 }
