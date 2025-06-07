@@ -17,6 +17,10 @@
    "repositories": [{
         "type": "vcs",
         "url": "https://github.com/acsantanamx/web3.php"
+    },
+    {
+        "type": "vcs",
+        "url": "https://github.com/acsantanamx/php-ethereum-offline-raw-tx"
     }],
   "require": {
     "php": ">=7.1",
