@@ -14,6 +14,7 @@ class TransactionBuilder
 {
     private $nonce;
     private $to;
+    private $chainId = 0;
     private $amount;
     private $gasPrice;
     private $gasLimit;
@@ -43,6 +44,11 @@ class TransactionBuilder
         return $this;
     }
 
+    public function chainId(string $chainId) {
+        $this->chainId = $chainId;
+        return $this;
+    }
+
     public function amount(string $amount)
     {
         $this->amount = $amount;
@@ -69,6 +75,6 @@ class TransactionBuilder
 
     public function build()
     {
-        return new Transaction(new BaseTransaction($this->nonce, $this->gasPrice, $this->gasLimit, $this->to, $this->amount, $this->data), $this->eth);
+        return new Transaction(new BaseTransaction($this->nonce, $this->gasPrice, $this->gasLimit, $this->to, $this->chainId, $this->amount, $this->data), $this->eth);
     }
 }
