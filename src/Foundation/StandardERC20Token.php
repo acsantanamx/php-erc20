@@ -43,7 +43,7 @@ abstract class StandardERC20Token extends ERC20 {
     }
 
     public function decimals(): int {
-        
+
         if ($this->decimals) {
             return $this->decimals;
         }
@@ -65,7 +65,7 @@ abstract class StandardERC20Token extends ERC20 {
      * @param float $amount
      * @return Transaction\Transaction
      */
-    public function transfer(string $from, string $to, float $amount, string $gasLimit = 'default', string $gasPrice = 'default') {
+    public function createTransferTransaction(string $from, string $to, float $amount, string $gasLimit = 'default', string $gasPrice = 'default') {
 
         $amount = Number::scaleUp($amount, $this->decimals());
         $data   = $this->buildTransferData($to, $amount);
@@ -99,7 +99,7 @@ abstract class StandardERC20Token extends ERC20 {
                     ->getData('transfer', $to, $amount);
     }
 
-    public function approve(string $ownerAddress, string $spenderAddress, string $amount, string $gasLimit = 'default', string $gasPrice = 'default') {
+    public function createApproveTransaction(string $ownerAddress, string $spenderAddress, string $amount, string $gasLimit = 'default', string $gasPrice = 'default') {
         $amount = Number::scaleUp($amount, $this->decimals());
         $data   = $this->buildApproveData($spenderAddress, $amount);
         $nonce  = Number::toHex($this->getEth()
@@ -142,7 +142,7 @@ abstract class StandardERC20Token extends ERC20 {
      * @param float $amount
      * @return Transaction\Transaction
      */
-    public function transferFrom(string $spender, string $from, string $to, float $amount, string $gasLimit = 'default', string $gasPrice = 'default') {
+    public function createTransferFromTransaction(string $spender, string $from, string $to, float $amount, string $gasLimit = 'default', string $gasPrice = 'default') {
         $amount = Number::scaleUp($amount, $this->decimals());
         $data   = $this->buildTransferFromData($from, $to, $amount);
         $nonce  = Number::toHex($this->getEth()
