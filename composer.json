@@ -25,7 +25,8 @@
   "require": {
     "php": ">=7.1",
     "iexbase/web3.php": "master",
-    "web3p/ethereum-util": "^0.1.4",
-    "kornrunner/ethereum-offline-raw-tx": "dev-main"
+    "kornrunner/ethereum-offline-raw-tx": "dev-main",
+    "kornrunner/keccak": "~1.0",
+    "simplito/elliptic-php": "~1.0.6"
   }
 }
